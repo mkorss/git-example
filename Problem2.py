@@ -20,13 +20,8 @@ for row in purchases_list:
         total_ny += price 
         count_ny += 1
         print(f"Order amount: ${price}, running total for New York: ${round(total_ny, 2)}")
-        
-print("\nProcessing transactions for San Francisco:")
-for row in purchases_list:
-    city = row[2]
-    price = float(row[4])
     
-    if 'San Francisco' in city:
+    elif 'San Francisco' in city:
         total_sf += price
         count_sf += 1
         print(f"Order amount: ${price}, running total for San Francisco: ${round(total_sf, 2)}")
@@ -59,6 +54,8 @@ with open ('Transactions.txt', 'a') as f:
 
     else:
         f.write("\nSan Francisco has a higher average transaction amount than New York.")
+
+print('Transactions Completed')
     
 
         
